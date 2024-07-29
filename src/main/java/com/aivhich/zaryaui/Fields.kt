@@ -1,4 +1,4 @@
-package com.aivhich.justui.components
+package com.aivhich.zaryaui
 
 import androidx.compose.runtime.Composable
 

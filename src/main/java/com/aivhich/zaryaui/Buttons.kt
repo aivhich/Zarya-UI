@@ -1,4 +1,4 @@
-package com.aivhich.justui.components
+package com.aivhich.zaryaui
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
