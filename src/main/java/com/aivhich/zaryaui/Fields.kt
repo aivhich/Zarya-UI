@@ -78,7 +78,7 @@ fun OutlinedField(
             onNext = { focusManager.moveFocus(FocusDirection.Down) }
         ),
         placeholder = { BodyText(placeholder, weight = FontWeight.Normal) },
-        label = { BodyText(label) },
+        label = { BodyText(label, weight = FontWeight.W600) },
         singleLine = true,
         visualTransformation = VisualTransformation.None
     )
@@ -192,17 +192,14 @@ fun NicknameField(
             onNext = { focusManager.moveFocus(FocusDirection.Down) }
         ),
         placeholder = { BodyText(placeholder, weight = FontWeight.Normal) },
-        label = { BodyText(label) },
+        label = { BodyText(label, weight = FontWeight.W600) },
         singleLine = true,
         visualTransformation = VisualTransformation.None
     )
     if (error.isNotEmpty()) {
         Spacer(Modifier.height(8.dp))
-        SubheadingText(
+        SubText(
             text = error,
-            modifier = Modifier
-                .padding(30.dp, 0.dp)
-                .fillMaxWidth(),
             textAlign = TextAlign.Start
         )
     }
@@ -213,7 +210,7 @@ fun LoginField(
     value: String,
     error: String = "",
     onChange: (String) -> Unit,
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier.fillMaxWidth(0.8f),
     label: String = stringResource(id = R.string.email),
     placeholder: String = stringResource(id = R.string.enter_email)
 ) {
@@ -239,7 +236,7 @@ fun LoginField(
             onNext = { focusManager.moveFocus(FocusDirection.Down) }
         ),
         placeholder = { BodyText(placeholder, weight = FontWeight.Normal) },
-        label = { BodyText(label) },
+        label = { BodyText(label, weight = FontWeight.W600) },
         singleLine = true,
         visualTransformation = VisualTransformation.None
     )
@@ -259,7 +256,7 @@ fun PasswordField(
     error: String = "",
     onChange: (String) -> Unit,
     submit: () -> Unit,
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier.fillMaxWidth(0.8f),
     label: String = stringResource(id = R.string.password),
     placeholder: String = stringResource(id = R.string.enter_password)
 ) {
@@ -302,17 +299,14 @@ fun PasswordField(
             onDone = { submit() }
         ),
         placeholder = { BodyText(placeholder, weight = FontWeight.Normal) },
-        label = { BodyText(label) },
+        label = { BodyText(label, weight = FontWeight.W600) },
         singleLine = true,
         visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation()
     )
     if (error.isNotEmpty()) {
         Spacer(Modifier.height(8.dp))
-        SubheadingText(
+        SubText(
             text = error,
-            modifier = Modifier
-                .padding(30.dp, 0.dp)
-                .fillMaxWidth(),
             textAlign = TextAlign.Start
         )
     }

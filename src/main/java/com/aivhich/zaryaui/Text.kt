@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.sp
 
 //h1
@@ -54,7 +55,8 @@ fun BodyText(
 ) {
     Text(
         text,
-        fontSize = 16.sp,
+        fontSize = TextUnit(14F, TextUnitType.Sp),
+        lineHeight = TextUnit(16F, TextUnitType.Sp),
         fontWeight = weight,
         color = color,
         textAlign = textAlign
