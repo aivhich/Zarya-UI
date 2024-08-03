@@ -84,11 +84,11 @@ fun OutlinedField(
     )
     if (error.isNotEmpty()) {
         Spacer(Modifier.height(8.dp))
-        SubheadingText(
+        SubText(
             text = error,
             modifier = Modifier
                 .padding(30.dp, 0.dp)
-                .fillMaxWidth(),
+                .fillMaxWidth(0.8f),
             textAlign = TextAlign.Start
         )
     }
@@ -200,7 +200,8 @@ fun NicknameField(
         Spacer(Modifier.height(8.dp))
         SubText(
             text = error,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
+            modifier = Modifier.fillMaxWidth(0.8f)
         )
     }
 }
@@ -244,7 +245,8 @@ fun LoginField(
         Spacer(Modifier.height(8.dp))
         SubText(
             text = error,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
+            modifier = Modifier.fillMaxWidth(0.8f)
         )
     }
 }
@@ -307,7 +309,8 @@ fun PasswordField(
         Spacer(Modifier.height(8.dp))
         SubText(
             text = error,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
+            modifier = Modifier.fillMaxWidth(0.8f)
         )
     }
 }

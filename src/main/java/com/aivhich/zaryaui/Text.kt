@@ -17,6 +17,17 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.sp
 
+
+@Composable
+fun MegaText(text: String, textAlign: TextAlign = TextAlign.Center) {
+    Text(
+        text,
+        fontSize = 40.sp,
+        fontWeight = FontWeight.Bold,
+        textAlign = textAlign
+    )
+}
+
 //h1
 @Composable
 fun HeadlineText(text: String, textAlign: TextAlign = TextAlign.Center) {
@@ -51,7 +62,8 @@ fun BodyText(
     text: String,
     textAlign: TextAlign = TextAlign.Center,
     weight: FontWeight = FontWeight.Bold,
-    color: Color = Color.Unspecified
+    color: Color = Color.Unspecified,
+    modifier: Modifier = Modifier
 ) {
     Text(
         text,
@@ -59,18 +71,24 @@ fun BodyText(
         lineHeight = TextUnit(16F, TextUnitType.Sp),
         fontWeight = weight,
         color = color,
-        textAlign = textAlign
+        textAlign = textAlign,
+        modifier = modifier
     )
 }
 
 //h4
 @Composable
-fun SubText(text: String, textAlign: TextAlign = TextAlign.Center) {
+fun SubText(text: String,
+            color: Color = Color.Unspecified,
+            textAlign: TextAlign = TextAlign.Center,
+            modifier: Modifier = Modifier) {
     Text(
         text,
+        color = color,
         fontSize = 12.sp,
-        fontWeight = FontWeight.Bold,
-        textAlign = textAlign
+        fontWeight = FontWeight.Medium,
+        textAlign = textAlign,
+        modifier = modifier
     )
 }
 
