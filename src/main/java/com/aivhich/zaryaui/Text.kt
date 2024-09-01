@@ -10,9 +10,12 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.sp
@@ -22,7 +25,7 @@ import androidx.compose.ui.unit.sp
 fun MegaText(text: String, textAlign: TextAlign = TextAlign.Center) {
     Text(
         text,
-        fontSize = 40.sp,
+        fontSize = 36.sp,
         fontWeight = FontWeight.Bold,
         textAlign = textAlign
     )
@@ -33,7 +36,7 @@ fun MegaText(text: String, textAlign: TextAlign = TextAlign.Center) {
 fun HeadlineText(text: String, textAlign: TextAlign = TextAlign.Center) {
     Text(
         text,
-        fontSize = 28.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
         textAlign = textAlign
     )
@@ -45,12 +48,13 @@ fun SubheadingText(
     text: String,
     textAlign: TextAlign = TextAlign.Center,
     textColor: Color = Color.Unspecified,
+    fontWeight:FontWeight = FontWeight.W500,
     modifier: Modifier = Modifier
 ) {
     Text(
         text,
-        fontSize = 20.sp,
-        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        fontWeight = fontWeight,
         textAlign = textAlign,
         color = textColor, modifier = modifier
     )
@@ -72,7 +76,8 @@ fun BodyText(
         fontWeight = weight,
         color = color,
         textAlign = textAlign,
-        modifier = modifier
+        modifier = modifier,
+        overflow = TextOverflow.Ellipsis
     )
 }
 
@@ -81,13 +86,20 @@ fun BodyText(
 fun SubText(text: String,
             color: Color = Color.Unspecified,
             textAlign: TextAlign = TextAlign.Center,
+            overflow: TextOverflow = TextOverflow.Clip,
+            fontWeight:FontWeight = FontWeight.Medium,
+            lineHeight: TextUnit = 14.sp,
+            softWrap:Boolean = false,
             modifier: Modifier = Modifier) {
     Text(
         text,
         color = color,
         fontSize = 12.sp,
-        fontWeight = FontWeight.Medium,
+        fontWeight = fontWeight,
         textAlign = textAlign,
+        overflow = overflow,
+        lineHeight = lineHeight,
+        softWrap = softWrap,
         modifier = modifier
     )
 }
