@@ -30,7 +30,7 @@ fun MainButton(
     onClick: () -> Unit,
     shape: Shape = RoundedCornerShape(25),
     modifier: Modifier = Modifier
-        .shadow(3.dp, clip = true, shape = shape)
+        .shadow(1.5.dp, clip = true, shape = shape)
         .fillMaxWidth(0.9f)
         .height(48.dp),
     content: @Composable () -> Unit,

@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -52,6 +53,7 @@ fun OutlinedField(
     modifier: Modifier = Modifier,
     label: String,
     placeholder: String,
+    keyboardOptions: KeyboardOptions=KeyboardOptions(imeAction = ImeAction.Next),
     painter: Painter? = null
 ) {
     val focusManager = LocalFocusManager.current
@@ -73,14 +75,15 @@ fun OutlinedField(
         onValueChange = onChange,
         modifier = modifier,
         leadingIcon = if(painter!=null) leadingIcon else null,
-        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+        keyboardOptions = keyboardOptions,
         keyboardActions = KeyboardActions(
             onNext = { focusManager.moveFocus(FocusDirection.Down) }
         ),
         placeholder = { BodyText(placeholder, weight = FontWeight.Normal) },
         label = { BodyText(label, weight = FontWeight.W600) },
         singleLine = true,
-        visualTransformation = VisualTransformation.None
+        visualTransformation = VisualTransformation.None,
+
     )
     if (error.isNotEmpty()) {
         Spacer(Modifier.height(8.dp))

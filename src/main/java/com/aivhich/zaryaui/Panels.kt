@@ -105,7 +105,7 @@ fun PointsPanel(text: String, painter: Painter, bigtype: Boolean = false) {
         } else {
             SubheadingText(text = text)
         }
-        Icon(painter, "")
+        Icon(painter, "", modifier = Modifier.size(32.dp))
     }
 }
 

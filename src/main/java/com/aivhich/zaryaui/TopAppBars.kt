@@ -38,7 +38,7 @@ import com.aivhich.justui.R
 
 
 @Composable
-fun UsualProgressBar(progress: Float, modifier: Modifier=Modifier) {
+fun UsualProgressBar(progress: Float,  modifier: Modifier=Modifier) {
     Surface(
         modifier = modifier,
         color = MaterialTheme.colorScheme.surface
