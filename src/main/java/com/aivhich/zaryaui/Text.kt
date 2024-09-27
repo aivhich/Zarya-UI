@@ -48,7 +48,7 @@ fun SubheadingText(
     text: String,
     textAlign: TextAlign = TextAlign.Center,
     textColor: Color = Color.Unspecified,
-    fontWeight:FontWeight = FontWeight.W500,
+    fontWeight: FontWeight = FontWeight.W500,
     modifier: Modifier = Modifier
 ) {
     Text(
@@ -64,6 +64,8 @@ fun SubheadingText(
 @Composable
 fun BodyText(
     text: String,
+    fontSize: TextUnit = TextUnit(14F, TextUnitType.Sp),
+    lineHeight: TextUnit = TextUnit(16F, TextUnitType.Sp),
     textAlign: TextAlign = TextAlign.Center,
     weight: FontWeight = FontWeight.Bold,
     color: Color = Color.Unspecified,
@@ -71,8 +73,8 @@ fun BodyText(
 ) {
     Text(
         text,
-        fontSize = TextUnit(14F, TextUnitType.Sp),
-        lineHeight = TextUnit(16F, TextUnitType.Sp),
+        fontSize = fontSize,
+        lineHeight = lineHeight,
         fontWeight = weight,
         color = color,
         textAlign = textAlign,
@@ -83,14 +85,16 @@ fun BodyText(
 
 //h4
 @Composable
-fun SubText(text: String,
-            color: Color = Color.Unspecified,
-            textAlign: TextAlign = TextAlign.Center,
-            overflow: TextOverflow = TextOverflow.Clip,
-            fontWeight:FontWeight = FontWeight.Medium,
-            lineHeight: TextUnit = 14.sp,
-            softWrap:Boolean = false,
-            modifier: Modifier = Modifier) {
+fun SubText(
+    text: String,
+    color: Color = Color.Unspecified,
+    textAlign: TextAlign = TextAlign.Center,
+    overflow: TextOverflow = TextOverflow.Clip,
+    fontWeight: FontWeight = FontWeight.Medium,
+    lineHeight: TextUnit = 14.sp,
+    softWrap: Boolean = false,
+    modifier: Modifier = Modifier
+) {
     Text(
         text,
         color = color,

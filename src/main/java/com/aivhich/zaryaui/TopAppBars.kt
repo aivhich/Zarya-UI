@@ -35,13 +35,14 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.aivhich.justui.R
+import kotlin.math.max
 
 
 @Composable
 fun UsualProgressBar(progress: Float,  modifier: Modifier=Modifier) {
     Surface(
         modifier = modifier,
-        color = MaterialTheme.colorScheme.surface
+        color = MaterialTheme.colorScheme.background
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
@@ -77,7 +78,7 @@ fun UsualProgressBar(progress: Float,  modifier: Modifier=Modifier) {
 fun Appbar(allstrikes: Int, maxval:Int, painter: Painter) {
     //var route:String = navController.graph.route.toString()
     Surface(
-        color = MaterialTheme.colorScheme.surface,
+        color = MaterialTheme.colorScheme.background,
         modifier = Modifier.shadow(
             10.dp,
             RectangleShape,
@@ -95,7 +96,7 @@ fun Appbar(allstrikes: Int, maxval:Int, painter: Painter) {
         ) {
             LinearProgressIndicator(
                 progress = {
-                    (allstrikes/maxval).toFloat()
+                    allstrikes.toFloat()/maxval.toFloat()
                 },
                 modifier = Modifier
                     .fillMaxWidth(0.7f)
